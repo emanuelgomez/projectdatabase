@@ -1,0 +1,1 @@
+include ":project-database-employee", ":project-database-project", ":project-database-monitoring"

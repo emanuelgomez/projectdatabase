@@ -1,0 +1,26 @@
+monitoring:
+  build: ./project-database-monitoring
+  ports:
+    - "8083:8083"
+
+nginx:
+  build: ./project-database-nginx
+  links:
+    - employee:employee
+    - project:project
+  ports:
+    - "80:80"
+
+employee:
+  build: ./project-database-employee
+  links:
+   - monitoring:monitoring
+  ports:
+    - "8090:8090"
+
+project:
+  build: ./project-database-project
+  links:
+     - monitoring:monitoring
+  ports:
+    - "8091:8091"
