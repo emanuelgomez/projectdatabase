@@ -1,0 +1,18 @@
+server:
+  port: 8092
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+   waitTimeInMsWhenSyncEmpty: 0
+   # Disable self-preservation during development, see https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication
+   enableSelfPreservation: false
+
+spring.cloud.config.discovery.enabled: true

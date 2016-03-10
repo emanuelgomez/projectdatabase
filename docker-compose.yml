@@ -1,17 +1,33 @@
-nginx:
-  build: ./project-database-nginx
-  links:
-    - employee:employee
-    - project:project
-  ports:
-    - "80:80"
-
-employee:
-  build: ./project-database-employee
-  ports:
-    - "8090:8090"
+eureka:
+  build: ./project-database-eureka-server
+  ports: 
+    - "8092:8092"
 
 project:
   build: ./project-database-project
   ports:
     - "8091:8091"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+  links:
+    - eureka:eureka
+
+employee:
+  build: ./project-database-employee
+  ports:
+    - "8090:8090"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+  links:
+    - eureka:eureka
+
+gateway:
+  build: ./project-database-api-gateway
+  ports:
+    - "8080:8080"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+  links:
+    - eureka:eureka
+    - employee:employee
+    - project:project

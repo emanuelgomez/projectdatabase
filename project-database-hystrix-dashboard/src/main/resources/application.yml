@@ -1,0 +1,16 @@
+server:
+ port: 8094
+
+eureka:
+ client:
+  registerWithEureka: true
+  fetchRegistry: true #https://github.com/spring-cloud/spring-cloud-netflix/issues/746
+  serviceUrl:
+   defaultZone: http://localhost:8092/eureka/
+  healthcheck:
+   enabled: true
+
+turbine:
+ appConfig: gateway,project
+ aggregator:
+  clusterConfig: GATEWAY,PROJECT

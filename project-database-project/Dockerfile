@@ -16,4 +16,4 @@ COPY build/libs/project-database-*.jar /service.jar
 EXPOSE 8091
 
 # define default jar name
-ENTRYPOINT java $JVM_OPTS -jar /service.jar $ARGS
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/service.jar"]

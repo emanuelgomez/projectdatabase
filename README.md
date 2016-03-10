@@ -2,21 +2,22 @@
 Demo con docker, spring boot, integracion con spring cloud de netflix oss
 
 
-#Correr
-agregar a /etc/hosts 
-192.168.99.100  projectdatabase.com
+gradle bootRun a todos los proyectos
 
-en la raiz hacer
-gradle build
-docker-compose up
+Api gateway esta configurado con zuul como edge server, se levanta en 8080
+http://localhost:8080/project
+http://localhost:8080/project/employees
+http://localhost:8080/employee
 
-projectdatabase.com/project-app
-projectdatabase.com/employee-app
+Eureka Server
+http://localhost:8092/
 
-monitoring
-http://projectdatabase.com:8083/
-No mantiene el estado ya que no logro que vea las url de los otros proyectos, si bien se registran por el link que hay entre containers el container del monitor no puede ver las app de employee ni project
+Hystrix Dashboard
+http://localhost:8094/hystrix/
 
+Streams con turbine 
+- gateway (automaticamente monitorea los endpoint zuul): 
+http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Fturbine.stream%3Fcluster%3DGATEWAY
 
-
-deberian funcionar
+- project (automaticamente monitore los hystrix command)
+http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Fturbine.stream%3Fcluster%3DPROJECT

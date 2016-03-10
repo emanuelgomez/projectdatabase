@@ -1,1 +1,1 @@
-include ":project-database-employee", ":project-database-project"
+include ":project-database-eureka-server", ":project-database-hystrix-dashboard", ":project-database-employee", ":project-database-project", ":project-database-api-gateway"

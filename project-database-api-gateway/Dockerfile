@@ -13,7 +13,7 @@ RUN apt-get update && \
 COPY build/libs/project-database-*.jar /service.jar
 
 # service port
-EXPOSE 8090
+EXPOSE 8080
 
 # define default jar name
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/service.jar"]
