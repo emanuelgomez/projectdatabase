@@ -17,7 +17,7 @@ public class EmployeesBean {
 	@Autowired
     private EmployeesClient employeesClient;
 	
-	@HystrixCommand(fallbackMethod = "defaultEmployees")
+   @HystrixCommand(fallbackMethod = "defaultEmployees")
 	public List<Employee> getEmployees(String projectId) {
 		return employeesClient.getEmployees(projectId);
 	}

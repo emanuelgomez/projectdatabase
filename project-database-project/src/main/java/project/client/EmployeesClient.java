@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import project.domain.Employee;
 
-@FeignClient("employee")
+@FeignClient(name="employee")
 public interface EmployeesClient {
 	
 	@RequestMapping(method = RequestMethod.GET, value="/projects/{projectId}")

@@ -18,6 +18,6 @@ http://localhost:8094/hystrix/
 Streams con turbine 
 - gateway (automaticamente monitorea los endpoint zuul): 
 http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Fturbine.stream%3Fcluster%3DGATEWAY
-
+	
 - project (automaticamente monitore los hystrix command)
 http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Fturbine.stream%3Fcluster%3DPROJECT

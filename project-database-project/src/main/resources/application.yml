@@ -4,7 +4,7 @@ server:
 eureka:
  client:
   registerWithEureka: true
-  fetchRegistry: false #https://github.com/spring-cloud/spring-cloud-netflix/issues/746
+  fetchRegistry: true #https://github.com/spring-cloud/spring-cloud-netflix/issues/746
   serviceUrl:
    defaultZone: http://localhost:8092/eureka/
   healthcheck:
@@ -16,7 +16,7 @@ spring:
 eureka:
  client:
   registerWithEureka: true
-  fetchRegistry: false 
+  fetchRegistry: true 
   serviceUrl:
    defaultZone: http://${EUREKA_PORT_8092_TCP_ADDR}:8092/eureka/
  instance:

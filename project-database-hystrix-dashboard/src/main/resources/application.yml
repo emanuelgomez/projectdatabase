@@ -14,3 +14,15 @@ turbine:
  appConfig: gateway,project
  aggregator:
   clusterConfig: GATEWAY,PROJECT
+
+---
+spring:
+  profiles: docker
+eureka:
+ client:
+  registerWithEureka: true
+  fetchRegistry: true
+  serviceUrl:
+   defaultZone: http://${EUREKA_PORT_8092_TCP_ADDR}:8092/eureka/
+ instance:
+  preferIpAddress: true
