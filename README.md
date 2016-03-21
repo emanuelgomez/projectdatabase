@@ -21,3 +21,28 @@ http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Ftur
 	
 - project (automaticamente monitore los hystrix command)
 http://localhost:8094/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8094%2Fturbine.stream%3Fcluster%3DPROJECT
+
+
+
+----
+DOCKER COMPOSE
+
+docker-compose up
+
+En el caso de mac que uso una vm la reemplazar las url de arriba con la ip de la vm que da docker.
+
+Eureka
+http://192.168.99.100:8092/
+
+Gateway turbine stream
+http://192.168.99.100:8094/hystrix/monitor?stream=http%3A%2F%2F192.168.99.100%3A8094%2Fturbine.stream%3Fcluster%3DGATEWAY
+
+Project turbine stream
+http://192.168.99.100:8094/hystrix/monitor?stream=http%3A%2F%2F192.168.99.100%3A8094%2Fturbine.stream%3Fcluster%3DPROJECT
+
+Ejemplo url con feign
+http://192.168.99.100:8080/project/employees
+
+
+
+Eureka lanza -> Caused by: java.net.UnknownHostException: eureka: Name or service not known.

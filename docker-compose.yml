@@ -2,8 +2,10 @@ eureka:
   build: ./project-database-eureka-server
   ports: 
     - "8092:8092"
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
 
-hystrixDashboard:
+hystrixdashboard:
   build: ./project-database-hystrix-dashboard
   ports:
     - "8094:8094"
@@ -11,6 +13,9 @@ hystrixDashboard:
     - SPRING_PROFILES_ACTIVE=docker
   links:
     - eureka:eureka
+    - project:project
+    - employee:employee
+    - gateway:gateway
 
 project:
   build: ./project-database-project
@@ -20,6 +25,7 @@ project:
     - SPRING_PROFILES_ACTIVE=docker
   links:
     - eureka:eureka
+    - employee:employee
 
 employee:
   build: ./project-database-employee

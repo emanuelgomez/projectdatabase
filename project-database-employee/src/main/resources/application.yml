@@ -18,6 +18,6 @@ eureka:
   registerWithEureka: true
   fetchRegistry: false
   serviceUrl:
-   defaultZone: http://${EUREKA_PORT_8092_TCP_ADDR}:8092/eureka/
+   defaultZone: http://eureka:8092/eureka/
  instance:
   preferIpAddress: true

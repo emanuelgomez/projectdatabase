@@ -16,3 +16,10 @@ eureka:
    enableSelfPreservation: false
 
 spring.cloud.config.discovery.enabled: true
+
+---
+spring:
+  profiles: docker
+eureka:
+ instance:
+  preferIpAddress: true
