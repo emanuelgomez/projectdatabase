@@ -1,3 +1,10 @@
+mongodb:
+  image: mongo
+  hostname: mongodb
+  command: mongod --smallfiles
+  ports:
+    - "27017:27017"
+
 eureka:
   build: ./project-database-eureka-server
   ports: 
@@ -35,6 +42,7 @@ employee:
     - SPRING_PROFILES_ACTIVE=docker
   links:
     - eureka:eureka
+    - mongodb:mongodb
 
 gateway:
   build: ./project-database-api-gateway

@@ -10,6 +10,8 @@ eureka:
   healthcheck:
    enabled: true
 
+spring.data.mongodb.uri: mongodb://localhost/employee
+
 ---
 spring:
   profiles: docker
@@ -21,3 +23,5 @@ eureka:
    defaultZone: http://eureka:8092/eureka/
  instance:
   preferIpAddress: true
+
+spring.data.mongodb.uri: mongodb://mongodb/employee

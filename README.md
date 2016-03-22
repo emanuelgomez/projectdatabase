@@ -40,6 +40,10 @@ http://192.168.99.100:8094/hystrix/monitor?stream=http%3A%2F%2F192.168.99.100%3A
 Project turbine stream
 http://192.168.99.100:8094/hystrix/monitor?stream=http%3A%2F%2F192.168.99.100%3A8094%2Fturbine.stream%3Fcluster%3DPROJECT
 
+Url 
+http://192.168.99.100:8080/project
+http://192.168.99.100:8080/employee
+
 Ejemplo url con feign
 http://192.168.99.100:8080/project/employees
 

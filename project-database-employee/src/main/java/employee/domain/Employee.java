@@ -1,9 +1,10 @@
 package employee.domain;
 
 import java.util.List;
+import org.springframework.data.annotation.Id;
 
 public class Employee {
-
+	@Id
 	private String id;
 	private String name;
 	private String homeState;
