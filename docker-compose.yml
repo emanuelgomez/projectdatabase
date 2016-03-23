@@ -33,7 +33,6 @@ project:
   links:
     - eureka:eureka
     - mongodb:mongodb
-    - employee:employee
 
 employee:
   build: ./project-database-employee
