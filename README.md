@@ -11,6 +11,7 @@ http://localhost:8080/employee
 
 Eureka Server
 http://localhost:8092/
+http://localhost:8092/eureka/apps
 
 Hystrix Dashboard
 http://localhost:8094/hystrix/
